@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using SizeWebViewToContent.Controls;
+using SizeWebViewToContent.Handlers;
 
 namespace SizeWebViewToContent;
 
@@ -13,6 +15,12 @@ public static class MauiProgram
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+            })
+            .ConfigureMauiHandlers(handlersCollection =>
+            {
+#if IOS
+                handlersCollection.AddHandler<ContentSizedWebView, ContentSizedWebViewHandler>();
+#endif
             });
 
 #if DEBUG
