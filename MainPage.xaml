@@ -6,9 +6,11 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="20">
-            <controls:ContentSizedWebView 
-                x:Name="MyWebView"
-                Shadow="{Shadow Radius=16, Opacity=0.2}" />
+            <Border Shadow="{Shadow Radius=16, Opacity=0.2}"
+                    StrokeShape="RoundRectangle 16">
+                <controls:ContentSizedWebView 
+                    x:Name="MyWebView"/>
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 

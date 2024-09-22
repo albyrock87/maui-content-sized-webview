@@ -17,11 +17,18 @@ public partial class MainPage : ContentPage
                                     p.innerHTML = 'This is a paragraph of text.';
                                     document.body.appendChild(p);
                                 }
+                                function removeText() {
+                                    var p = document.querySelector('p');
+                                    if (p) {
+                                        document.body.removeChild(p);
+                                    }
+                                }
                             </script>
                        </head>
                        <body style="background:lightblue">
                            <h3>WebView content</h3>
                            <button onclick="addText()">Add paragraph</button>
+                           <button onclick="removeText()">Remove paragraph</button>
                            </div>
                        </body>
                    </html>

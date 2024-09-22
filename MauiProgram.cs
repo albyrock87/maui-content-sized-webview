@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using SizeWebViewToContent.Controls;
-using SizeWebViewToContent.Handlers;
 
 namespace SizeWebViewToContent;
 
@@ -18,8 +17,8 @@ public static class MauiProgram
             })
             .ConfigureMauiHandlers(handlersCollection =>
             {
-#if IOS
-                handlersCollection.AddHandler<ContentSizedWebView, ContentSizedWebViewHandler>();
+#if IOS || ANDROID
+                handlersCollection.AddHandler<ContentSizedWebView, Handlers.ContentSizedWebViewHandler>();
 #endif
             });
 
