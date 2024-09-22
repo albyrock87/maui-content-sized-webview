@@ -13,7 +13,7 @@ public class ContentSizedWebViewHandler : WebViewHandler
         [nameof(WebView.WebChromeClient)] = MapContentSizedWebChromeClient
     };
 
-    private static void MapContentSizedWebChromeClient(IWebViewHandler handler, IWebView webView)
+    public static void MapContentSizedWebChromeClient(IWebViewHandler handler, IWebView webView)
     {
         if (handler is ContentSizedWebViewHandler platformHandler)
         {
